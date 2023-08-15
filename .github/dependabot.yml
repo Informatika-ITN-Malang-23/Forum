@@ -1,0 +1,35 @@
+version: 2
+registries:
+  spark:
+    type: composer-repository
+    url: spark.laravel.com
+    username: ${{ secrets.SPARK_USERNAME }}
+    password: ${{ secrets.SPARK_API_TOKEN }}
+updates:
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+
+  # Maintain dependencies for npm
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "npm"
+      - "dependencies"
+
+  # Maintain dependencies for Composer
+  - package-ecosystem: "composer"
+    directory: "/"
+    registries:
+      - spark
+    schedule:
+      interval: "daily"
+    labels:
+      - "php"
+      - "dependencies"
