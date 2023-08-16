@@ -1,0 +1,23 @@
+.form_container {
+    width: 25%;
+    height: auto;
+    padding: 25px;
+}
+
+.form_label {
+    margin-top: 1.5rem;
+    padding-bottom: 10px;
+}
+
+.link_login {
+    display: flex;
+    padding: 15px;
+    justify-content: end;
+}
+
+.link_register {
+    display: flex;
+    margin-top: 15px;
+    padding: 15px;
+    justify-content: end;
+}
